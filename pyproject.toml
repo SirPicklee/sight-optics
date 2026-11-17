@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sightoptics"
+version = "0.1.0"
+description = "Optical design and analysis of weapon sights: ray tracing, aberrations, MTF, tolerancing"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy", "matplotlib", "scipy"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+compare = ["rayoptics"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
